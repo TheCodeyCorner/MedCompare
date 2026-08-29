@@ -1,0 +1,7 @@
+id,name,manufacturer,type,active_ingredient,cost,tablet_count
+1,Paracetamol 500mg,ABC Pharma,Generic,Paracetamol,25,10
+2,Crocin 500mg,XYZ Pharma,Branded,Paracetamol,35,10
+3,Calpol 500mg,Health Pharma,Branded,Paracetamol,30,15
+4,Azithromycin 500mg,MedCorp,Generic,Azithromycin,48,6
+5,Azithral 500mg,ABC Pharma,Branded,Azithromycin,72,6
+6,Pan-D,HealthCare Pharma,Branded,Pantoprazole + Domperidone,120,10

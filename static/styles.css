@@ -1,0 +1,655 @@
+/* =========================================================
+   ROOT & BASE
+   ========================================================= */
+
+:root {
+  --primary-color: #80b9dd;
+  --primary-dark: #001a3d;
+  --secondary-color: #1282a2;
+  --accent-color: #ffc107;
+  --text-color: #333;
+  --muted-color: #666;
+  --container-width: 1200px;
+  --transition: 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(92%, var(--container-width));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .container {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo img {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: #4fc3f7;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -3px 0 #fff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 75px);
+  margin-top: 75px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(218, 221, 226, 0.95),
+    rgba(90, 179, 202, 0.78)
+  );
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 75px);
+}
+
+.hero-container {
+  min-height: calc(100vh - 75px);
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.mun-title {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+.tagline {
+  max-width: 800px;
+  margin: 20px 0 30px;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.mobile-logo-image {
+  display: none;
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.globe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globe-container img {
+  width: min(380px, 100%);
+  border-radius: 50%;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: #222;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+}
+
+.mouse {
+  width: 25px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+}
+
+.wheel {
+  width: 3px;
+  height: 8px;
+  margin: 6px auto;
+  background: #fff;
+  border-radius: 5px;
+  animation: wheel 1.5s infinite;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  margin: 10px auto 0;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+@keyframes wheel {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 0.4;
+  }
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+#medicine-search-form {
+  display: flex;
+  gap: 10px;
+  width: min(92%, 800px);
+  margin: 30px auto;
+}
+
+#medicine-search {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#medicine-search-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MEDICINE CARDS
+   ========================================================= */
+
+.medicine-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: min(92%, var(--container-width));
+  margin: 30px auto;
+}
+
+.medicine-card {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.medicine-type {
+  font-weight: bold;
+}
+
+.medicine-type.generic {
+  color: green;
+}
+
+.medicine-type.branded {
+  color: blue;
+}
+
+.medicine-name {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.medicine-manufacturer {
+  margin-top: 10px;
+}
+
+.medicine-active-ing {
+  margin-top: 10px;
+}
+
+.medicine-cost {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.medicine-tablets {
+  margin-top: 10px;
+}
+
+.medicine-cost-per-tablet {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   FAVORITE BUTTON
+   ========================================================= */
+
+.favorite-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.favorite-heart {
+  color: #999;
+}
+
+.favorite-button.active .favorite-heart {
+  color: red;
+}
+
+
+/* =========================================================
+   FAVORITES
+   ========================================================= */
+
+#favorites {
+  min-height: 500px;
+  padding: 50px 0;
+}
+
+#favorites h1 {
+  margin-bottom: 30px;
+}
+
+.no-favorites {
+  margin-top: 40px;
+  color: var(--muted-color);
+  text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 0 25px;
+}
+
+.footer-about {
+  flex: 1;
+  max-width: 650px;
+}
+
+.footer-links {
+  min-width: 200px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: #4fc3f7;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 90;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .globe-container {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 65px;
+  }
+
+  .container {
+    width: min(100% - 30px, var(--container-width));
+  }
+
+  .navbar .container {
+    min-height: 65px;
+  }
+
+  .nav-menu {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 10px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 65px);
+    margin-top: 65px;
+    padding: 80px 0 60px;
+  }
+
+  .hero-overlay {
+    min-height: calc(100vh - 65px);
+  }
+
+  .hero-container {
+    min-height: calc(100vh - 65px);
+    display: block;
+  }
+
+  .hero-content {
+    padding: 20px 0 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .mobile-logo-image {
+    display: block;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+
+  #medicine-search-form {
+    flex-direction: column;
+  }
+
+  #medicine-search {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .footer-about,
+  .footer-links {
+    width: 100%;
+    max-width: none;
+  }
+
+  .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-links li {
+    margin: 0;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+}

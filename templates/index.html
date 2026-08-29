@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedCompare</title>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<!-- =====================================================
+     NAVIGATION
+     Change the menu labels and links only.
+     ===================================================== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#home" class="logo">
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo">
+        <span>MedCompare</span>
+      </a>
+
+      
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#home" class="nav-link active">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#footer" class="nav-link">
+            About
+          </a>
+    
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#medicine-search-form" class="nav-link">
+           Compare Now
+          </a>
+          
+        </li>
+
+        <li class="nav-item">
+          <a href="/favorites" class="nav-link">View Favorites</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- =====================================================
+       HERO
+       ===================================================== -->
+  <section class="hero" id="home">
+
+    <!-- Optional background video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="{{ url_for('static', filename='assets/hero-video.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+      <div class="container hero-container">
+
+        <div class="hero-content">
+          <h1>
+            MedCompare<br>
+            <span class="mun-title"></span>
+          </h1>
+
+          <p class="tagline">
+            Compare medicines, make informed choices, and save money with MedCompare.
+          </p>
+
+          <img
+            src="{{ url_for('static', filename='assets/logo.png') }}"
+            alt="Logo"
+            class="mobile-logo-image"
+          >
+
+          <div class="hero-buttons">
+            <a href="#medicine-search-form" class="btn btn-primary">Compare Now</a>
+            <a href="/favorites" class="btn btn-secondary">View Favorites</a>
+          </div>
+        </div>
+
+        <div class="globe-container">
+          <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Main Logo">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="scroll-down">
+      <div class="mouse"><div class="wheel"></div></div>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+  Working Section
+     ===================================================== -->
+
+    <!-- Medicine Search Form -->
+    <form id="medicine-search-form">
+
+        <input
+            type="text"
+            id="medicine-search"
+            name="medicine"
+            placeholder="Enter medicine name"
+            required>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+    
+    
+     <div class="medicine-card-grid" id="primary">
+
+      <div class="medicine-card">
+
+        <div class="medicine-type generic">
+          Generic
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="1"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Paracetamol 500mg
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>Test Pharma
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Paracetamol
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹25.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 10
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹2.50
+        </div>
+
+      </div>
+
+
+      <div class="medicine-card">
+
+        <div class="medicine-type branded">
+          Branded
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="2"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Crocin 500mg
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>XYZ Pharma
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Paracetamol
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹35.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 10
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹3.50
+        </div>
+
+      </div>
+
+
+      <div class="medicine-card">
+
+        <div class="medicine-type branded">
+          Branded
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="3"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Calpol 500mg
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>Health Pharma
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Paracetamol
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹30.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 15
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹2.00
+        </div>
+
+      </div>
+
+
+      <div class="medicine-card">
+
+        <div class="medicine-type generic">
+          Generic
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="4"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Azithromycin 500mg
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>MedCorp
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Azithromycin
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹48.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 6
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹8.00
+        </div>
+
+      </div>
+
+
+      <div class="medicine-card">
+
+        <div class="medicine-type branded">
+          Branded
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="5"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Azithral 500mg
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>ABC Pharma
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Azithromycin
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹72.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 6
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹12.00
+        </div>
+
+      </div>
+
+
+      <div class="medicine-card">
+
+        <div class="medicine-type branded">
+          Branded
+        </div>
+
+        <button
+          class="favorite-button"
+          data-id="6"
+          aria-label="Add to favorites">
+
+          <span class="favorite-heart">
+            ♡
+          </span>
+
+        </button>
+
+        <div class="medicine-name">
+          Pan-D
+        </div>
+
+        <div class="medicine-manufacturer">
+          Manufacturer:<br>HealthCare Pharma
+        </div>
+
+        <div class="medicine-active-ing">
+          Active Ingredient:<br>Pantoprazole + Domperidone
+        </div>
+
+        <div class="medicine-cost">
+          Cost: ₹120.00
+        </div>
+
+        <div class="medicine-tablets">
+          Tablets: 10
+        </div>
+
+        <div class="medicine-cost-per-tablet">
+          Cost per Tablet: ₹12.00
+        </div>
+
+      </div>
+
+    </div>
+    
+    <div class="analytics-grid">
+    </div>
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer" id="footer">
+  <div class="container">
+
+    <div class="footer-content">
+
+      <div class="footer-about">
+        <h3>ABOUT</h3>
+        <p>
+          Your website description goes here. Replace this with your own
+          organization, project, company, event, or application information.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>QUICK LINKS</h3>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#primary">Compare</a></li>
+          <li><a href="/favorites">Favorites</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 YOUR WEBSITE. All Rights Reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Back to top -->
+
+<a href="#home" class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const backToTop =
+      document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
