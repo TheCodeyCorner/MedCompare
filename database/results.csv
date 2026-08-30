@@ -1,1 +1,206 @@
 id,name,manufacturer,manufacturer_type,active_ingredient,cost,medicine_type,quantity
+180594,Paradana 250mg Tablet,Dana Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),8.3,tablet,10
+35456,Calpol 250mg Tablet,Glaxo SmithKline Pharmaceuticals Ltd,Branded,Paracetamol (250mg),13.07,tablet,15
+137682,Medimol 250mg Tablet,Synchem Lab,Branded,Paracetamol (250mg),9.5,tablet,10
+174019,P 250 Tablet DT,Apex Laboratories Pvt Ltd,Branded,Paracetamol (250mg),14.5,tablet,10
+138102,Medimol Kid 250mg Tablet,Synchem Lab,Branded,Paracetamol (250mg),15.1,tablet,10
+11878,Arden 250mg Tablet,Adonis Laboratories Pvt Ltd,Branded,Paracetamol (250mg),24.89,tablet,15
+196117,Raypam 250mg Tablet,Rayrise Healthcare,Branded,Paracetamol (250mg),19.0,tablet,10
+3783,Arden 250mg Tablet,Adonis Laboratories Pvt Ltd,Branded,Paracetamol (250mg),20.57,tablet,10
+2975,Admol 250 DT Tablet,Kepler Health Care,Branded,Paracetamol (250mg),25.0,tablet,10
+80125,Ezeepara 250mg Tablet,Abbott,Branded,Paracetamol (250mg),21.0,tablet,6
+4225,ANAMOL 250 MG SUPPOSITORY,Elder Pharmaceuticals Ltd,Branded,Paracetamol (250mg),41.0,suppository,5
+114543,Junimol RDS 250mg Suppository,Elder Pharmaceuticals Ltd,Branded,Paracetamol (250mg),44.1,suppository,5
+186284,Rectol 250 Suppository,Bliss Gvs Pharma Limited,Branded,Paracetamol (250mg),52.0,suppository,5
+140840,Metacin 250mg Suppository,Themis Pharmaceuticals Prop Chemosyn Ltd,Branded,Paracetamol (250mg),59.9,suppository,5
+150922,Neomol 250 Anal Suppository,Neon Laboratories Ltd,Branded,Paracetamol (250mg),90.0,suppository,5
+200777,Suppol 250mg Suppository,Meridian Enterprises Pvt Ltd,Branded,Paracetamol (250mg),96.0,suppository,5
+192516,Rakbi 250mg Suspension,Cubit Healthcare,Branded,Paracetamol (250mg),21.0,suspension,60
+230096,Teplow 250mg Suspension,Ciron Drugs & Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),21.0,suspension,60
+16745,Alcocin Suspension,Alicon Pharmaceutical Pvt Ltd,Branded,Paracetamol (250mg),23.0,suspension,60
+24717,Apyric 250mg Oral Suspension,Patson Laboratories Pvt  Ltd,Branded,Paracetamol (250mg),23.0,suspension,60
+182342,Pricol DS 250mg Suspension,Indian Pharmaceuticals,Branded,Paracetamol (250mg),23.9,suspension,60
+226500,Tempros Suspension,Osho Pharma Pvt Ltd,Branded,Paracetamol (250mg),24.0,suspension,60
+60851,DR Best Paracetamol 250 Oral Suspension,DR Best pharmaceuticals Pvt Ltd,Generic,Paracetamol (250mg),25.0,suspension,60
+147478,Mormol 250mg Suspension,Moreish Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),27.0,suspension,60
+193499,Raxflame 250mg Oral Suspension,Rax Health Care Pvt Ltd,Branded,Paracetamol (250mg),27.0,suspension,60
+216659,Temp 250mg Syrup,Normak Laboratories,Branded,Paracetamol (250mg),27.0,syrup,60
+229053,Ticpar 250mg Oral Suspension,Asiatic Pharmaceuticals,Branded,Paracetamol (250mg),27.0,suspension,60
+20825,Antimol 250 Oral Suspension,Giriraj Healthcare,Branded,Paracetamol (250mg),27.75,suspension,60
+16716,Anapara 250mg Syrup,Anabolic Remedies Pvt Ltd,Branded,Paracetamol (250mg),27.8,syrup,60
+114630,Jetmol Suspension,Aster Pharma,Branded,Paracetamol (250mg),27.8,suspension,60
+92414,Famol Suspension,Suzikem Drugs Pvt Ltd,Branded,Paracetamol (250mg),28.0,suspension,60
+252271,Zenimol Forte 250mg Oral Suspension,Zencus Pharma,Branded,Paracetamol (250mg),28.0,suspension,60
+5434,A 250 Suspension,Adventure Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),28.5,suspension,60
+145699,Mam 250mg Oral Suspension,Midas Biotek Pvt Ltd,Branded,Paracetamol (250mg),28.5,suspension,60
+179289,Pyrinil Forte 250mg Syrup,Akpash Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),29.0,syrup,60
+227311,Tifmol Oral Suspension,Positif Life sciences,Branded,Paracetamol (250mg),29.0,suspension,60
+91179,Fevedot 250mg Oral Suspension,Invision Medi Sciences Pvt Ltd,Branded,Paracetamol (250mg),30.0,suspension,60
+92644,FEE Suspension,Safetech Formulation,Branded,Paracetamol (250mg),30.0,suspension,60
+127805,Leximol Syrup,Lexicon Biotech India Ltd,Branded,Paracetamol (250mg),30.0,syrup,60
+186860,Relief P Syrup,Relief Formulations Pvt Ltd,Branded,Paracetamol (250mg),30.0,syrup,60
+194436,Relief P Syrup,Maa Formulations Pvt Ltd,Branded,Paracetamol (250mg),30.0,syrup,60
+124700,Lanol 250mg Oral Suspension,Hetero Drugs Ltd,Branded,Paracetamol (250mg),30.47,suspension,60
+92829,Febreno 250mg Suspension,Pentamark Organics,Branded,Paracetamol (250mg),31.0,suspension,60
+107369,Hosnim 250mg Oral Suspension,Silhos Pharma Ltd,Branded,Paracetamol (250mg),31.0,suspension,60
+165936,Ormol 250mg Oral Suspension,Orphic Pharma (India) Ltd,Branded,Paracetamol (250mg),31.0,suspension,60
+182572,Paramone 250mg Oral Suspension,Amon Biotech,Branded,Paracetamol (250mg),31.0,suspension,60
+89844,Fevridol 250mg Syrup,Zuventus Healthcare Ltd,Branded,Paracetamol (250mg),32.0,syrup,60
+125549,Lanoler 250mg Suspension,Sidmak Laboratories India Pvt Ltd,Branded,Paracetamol (250mg),32.0,suspension,60
+64291,Day Syrup,Marquess Genetica Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),32.3,syrup,60
+91904,Famol 250mg Syrup,Unisharp Pharmaceuticals,Branded,Paracetamol (250mg),32.75,syrup,60
+178985,Pyro 250mg Oral Suspension,Foi Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),32.75,suspension,60
+251982,Zeemol 250mg Suspension,CE-Biotec Pvt Ltd,Branded,Paracetamol (250mg),32.9,suspension,60
+13157,Abmol 250mg Suspension,Absolute Medicare Solutions Pvt Ltd,Branded,Paracetamol (250mg),34.0,suspension,60
+113045,Ibibull 250mg Suspension,Indiabulls pharmaceutical ltd,Branded,Paracetamol (250mg),34.0,suspension,60
+117327,Kyomol Suspension,Lifekyor Pharmaceuticals,Branded,Paracetamol (250mg),34.0,suspension,60
+150239,Molofast 250mg Oral Suspension,Starsure Remedies,Branded,Paracetamol (250mg),34.0,suspension,60
+191304,R-Mol Oral Suspension,Matish Healthcare,Branded,Paracetamol (250mg),34.0,suspension,60
+223883,Tylen 250mg Oral Suspension,Totem Biotech Pvt Ltd,Branded,Paracetamol (250mg),34.0,suspension,60
+18575,Arismol-DS Oral Suspension,Ariskem Pharmaceuticals Private Limited,Branded,Paracetamol (250mg),34.96,suspension,60
+10401,Akmol 250 Oral Suspension,Akiez Healthcare,Branded,Paracetamol (250mg),35.0,suspension,60
+20946,Aripa-OS 250mg Suspension,Sarian Healthcare,Branded,Paracetamol (250mg),35.0,suspension,60
+55207,Cumol 250mg Syrup,Elixir Pharmacon,Branded,Paracetamol (250mg),35.0,syrup,60
+68004,DV Para 250mg Oral Suspension,Dvm Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),35.0,suspension,60
+78551,Extramol 250mg Syrup,Aspire Remedies,Branded,Paracetamol (250mg),35.0,syrup,60
+107220,Hiflyer 250mg Syrup,Lifepure Labs Pvt Ltd,Branded,Paracetamol (250mg),35.0,syrup,60
+117813,Kritfen 250mg Oral Suspension,Krishlar Pharmaceuticals,Branded,Paracetamol (250mg),35.0,suspension,60
+119407,Kazpar 250mg Oral Suspension,Sakshit Healthcare,Branded,Paracetamol (250mg),35.0,suspension,60
+119912,Kezimol 250mg Suspension,Ken Biotec,Branded,Paracetamol (250mg),35.0,suspension,60
+143797,Megamol DS 250mg Syrup,Medicross Pharmaceuticals,Branded,Paracetamol (250mg),35.0,syrup,60
+160472,Nettmol 250mg Oral Suspension,Nettle Pharmaceuticals,Branded,Paracetamol (250mg),35.0,suspension,60
+167201,Orimol 250mg Syrup,Orion Biotech Pvt Ltd,Branded,Paracetamol (250mg),35.0,syrup,60
+176407,Parawin 250mg Syrup,Knoll Pharmaceuticals Ltd,Branded,Paracetamol (250mg),35.0,syrup,60
+179579,Pyrimol DS Oral Suspension,Liza Life Sciences,Branded,Paracetamol (250mg),35.0,suspension,60
+201971,Sumol Kid Oral Suspension,Sunroxx Pharma,Branded,Paracetamol (250mg),35.0,suspension,60
+244629,Xymol 250mg Syrup,Nova Scotia,Branded,Paracetamol (250mg),35.0,syrup,60
+12869,Albimol Suspension,Albia Biocare,Branded,Paracetamol (250mg),35.2,suspension,60
+105875,Himol 250mg Oral Suspension,Hi-Cure Biotech,Branded,Paracetamol (250mg),35.2,suspension,60
+102111,Glitmol 250mg Oral Suspension,Lxora Life Sciences,Branded,Paracetamol (250mg),35.28,suspension,60
+198959,Riyopara 250mg Syrup,Riyadh Pharmaceutical,Branded,Paracetamol (250mg),35.44,syrup,60
+22658,Avimol 250mg Oral Suspension,Avail Healthcare,Branded,Paracetamol (250mg),35.5,suspension,60
+196797,Ricpar 250 Oral Suspension,Moderik Healthcare,Branded,Paracetamol (250mg),35.5,suspension,60
+92468,Fevesep 250mg Syrup,Biocore Pharmaceuticals,Branded,Paracetamol (250mg),35.9,syrup,60
+79439,Erimol 250mg Oral Suspension,Erika Remedies,Branded,Paracetamol (250mg),36.0,suspension,60
+92799,Fevotrac-Plus Oral Suspension,Welltrack Pharma,Branded,Paracetamol (250mg),36.0,suspension,60
+93381,Fevelast Oral Suspension,Zenotis Healthcare,Branded,Paracetamol (250mg),36.0,suspension,60
+111152,Intemol-OS Oral Suspension,Integrated Laboratories Pvt Ltd,Branded,Paracetamol (250mg),36.0,suspension,60
+115334,Jymol 250mg Oral Suspension,Jydem Bio Pharma Pvt Ltd,Branded,Paracetamol (250mg),36.0,suspension,60
+178455,Parazine 250 Oral Suspension,Amelio Pharmaceuticals,Branded,Paracetamol (250mg),36.0,suspension,60
+180026,Pyratic 250mg Oral Suspension,Biotic Healthcare,Branded,Paracetamol (250mg),36.0,suspension,60
+181733,Paac 250mg Syrup,Acto Pharma Pvt Ltd,Branded,Paracetamol (250mg),36.0,syrup,60
+182503,Paratus 250mg Oral Suspension,Invictus Lifesciences,Branded,Paracetamol (250mg),36.0,suspension,60
+193568,Rexia Syrup,Dea-della Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),36.0,syrup,60
+197788,Raznol 250 Oral Suspension,Chemross Lifesciences,Branded,Paracetamol (250mg),36.0,suspension,60
+240545,Verogesic 250mg Oral Suspension,Biorika Healthcare,Branded,Paracetamol (250mg),36.0,suspension,60
+243587,Wudupara Oral Suspension,Reqwell Pharma,Branded,Paracetamol (250mg),36.0,suspension,60
+245302,Xetamol 250mg Syrup,Nimbles Biotech Pvt Ltd,Branded,Paracetamol (250mg),36.0,syrup,60
+245427,Xolonac P 250mg Oral Suspension,Zenotis Healthcare,Branded,Paracetamol (250mg),36.0,suspension,60
+245490,Xilo 250mg Oral Suspension,Sannova Biotech Pvt Ltd,Branded,Paracetamol (250mg),36.0,suspension,60
+252825,Zidfev 250mg Oral Suspension,Zidwell Healthcare,Branded,Paracetamol (250mg),36.0,suspension,60
+87895,Feveryl Syrup,Mercury Laboratories Ltd,Branded,Paracetamol (250mg),36.09,syrup,60
+214247,Sarcetamol 250 Oral Suspension,Vsaar Pharma Pvt Ltd,Branded,Paracetamol (250mg),36.55,suspension,60
+172288,Orangemol 250mg Syrup,Panacea Biotec Ltd,Branded,Paracetamol (250mg),36.86,syrup,60
+80407,Ellpara Oral Suspension,Ellanjey Lifesciences,Branded,Paracetamol (250mg),36.9,suspension,60
+96835,Glamol 250mg Oral Suspension,Gladcare Formulations Pvt Ltd,Branded,Paracetamol (250mg),36.9,suspension,60
+139990,Mol Oral Suspension,Farlex Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),36.9,suspension,60
+172216,Orvipar 250mg Oral Suspension,Orville Biotek,Branded,Paracetamol (250mg),36.9,suspension,60
+176949,Paravib Suspension,Vibcare Pharma Pvt Ltd,Branded,Paracetamol (250mg),36.9,suspension,60
+245740,Xaio 250mg Oral Suspension,Indo-Asia Pharma Care,Branded,Paracetamol (250mg),36.9,suspension,60
+91863,Femol DS 250mg Syrup,Femgrace Formulations,Branded,Paracetamol (250mg),36.92,syrup,60
+240554,Vatican's Trick 250 Oral Suspension,Vatican Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),36.93,suspension,60
+180129,Piemol 250mg Syrup,Pearlshine Lifescience Pvt Ltd,Branded,Paracetamol (250mg),36.96,syrup,60
+196949,Repara 250mg Oral Suspension,Torainse Life Care Pvt Ltd,Branded,Paracetamol (250mg),36.96,suspension,60
+25067,Anupar 250mg Oral Suspension,Horean Healthcare Private Limited,Branded,Paracetamol (250mg),37.0,suspension,60
+92707,Fevtus 250mg Oral Suspension,Spencure Biotech Pvt. Ltd.,Branded,Paracetamol (250mg),37.0,suspension,60
+93066,Femol 250mg Syrup,Ambreyo Lifesciences,Branded,Paracetamol (250mg),37.0,syrup,60
+102677,Godimol 250mg Oral Suspension,Godase Healthcare,Branded,Paracetamol (250mg),37.0,suspension,60
+103067,Gatmol 250mg Oral Suspension,Gatlen Biotech,Branded,Paracetamol (250mg),37.0,suspension,60
+146494,Molphyn 250 Oral Suspension,Hummed Healthcare,Branded,Paracetamol (250mg),37.0,suspension,60
+147526,Molter 250mg Oral Suspension,Laxter Pharmaceutical Pvt Ltd,Branded,Paracetamol (250mg),37.0,suspension,60
+148042,Molra 250mg Oral Suspension,Otik Biotec,Branded,Paracetamol (250mg),37.0,suspension,60
+171900,Ogipar Oral Suspension,Logimed Pharma Pvt Ltd,Branded,Paracetamol (250mg),37.0,suspension,60
+232526,Uasta 250mg Oral Suspension,Uniword Pharma,Branded,Paracetamol (250mg),37.0,suspension,60
+37205,Cromol 250mg Oral Suspension,Green Cross Remedies,Branded,Paracetamol (250mg),37.7,suspension,60
+16953,Axmol 250mg Syrup,Axter Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),38.0,syrup,60
+23391,Aplomol 250mg Oral Suspension,Aplonis Healthcare,Branded,Paracetamol (250mg),38.0,suspension,60
+43811,Chilmic 250mg Oral Suspension,Siskan Pharma,Branded,Paracetamol (250mg),38.0,suspension,60
+43973,C Mol 250mg Oral Suspension,Ind Blues Pharma,Branded,Paracetamol (250mg),38.0,suspension,60
+47915,Cadipar 250mg Oral Suspension,Cadila Pharmaceuticals Ltd,Branded,Paracetamol (250mg),38.0,suspension,60
+70506,Dolxor 250mg Syrup,Trireme Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),38.0,syrup,60
+71007,Dramol Oral Suspension,Drams Healthcare,Branded,Paracetamol (250mg),38.0,suspension,60
+92723,Fedoper 250mg Oral Suspension,Dalcon Drugs Pvt Ltd,Branded,Paracetamol (250mg),38.0,suspension,60
+180567,Parazit 250mg Suspension,Nilrise Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),38.0,suspension,60
+232783,Ufipar 250mg Oral Suspension,Zeeford Life Sciences,Branded,Paracetamol (250mg),38.0,suspension,60
+246030,Yoromol 250mg Oral Suspension,Mediyork Pharma Pvt Ltd,Branded,Paracetamol (250mg),38.0,suspension,60
+123714,Lotemp 250mg Suspension,Raptakos Brett & Co Ltd,Branded,Paracetamol (250mg),38.05,suspension,60
+151759,Nexpar Oral Solution,Pulse Pharmaceuticals,Branded,Paracetamol (250mg),63.5,solution,100
+85930,Fnil 250mg Syrup,Meditia Lab Pvt. Ltd.,Branded,Paracetamol (250mg),38.3,syrup,60
+147143,MH Mol 250mg Oral Suspension,Mahawat Healthcare Pvt Ltd,Branded,Paracetamol (250mg),38.3,suspension,60
+226816,Thermaset DS 250mg Oral Suspension,Orange Biotech Pvt Ltd,Branded,Paracetamol (250mg),38.3,suspension,60
+240841,Vromol 250mg Oral Suspension,Extant Pharmaceutical,Branded,Paracetamol (250mg),38.3,suspension,60
+249576,Zaminol 250mg Oral Suspension,Agonist Healthcare,Branded,Paracetamol (250mg),38.3,suspension,60
+201488,SUMO L DS 250 MG SUSPENSION,Alkem Laboratories Ltd,Branded,Paracetamol (250mg),19.25,suspension,30
+56676,Cecloson DS 250mg Oral Suspension,Vinson pharma,Branded,Paracetamol (250mg),38.6,suspension,60
+50349,Crocemol 250mg Oral Suspension,Cogniwell Pharmaceuticals Private Limited,Branded,Paracetamol (250mg),39.0,suspension,60
+70249,Dtmol 250mg Oral Suspension,Divine Remedies Pvt Ltd,Branded,Paracetamol (250mg),39.0,suspension,60
+102411,Glonac 250mg Oral Suspension,Gladden Laboratories,Branded,Paracetamol (250mg),39.0,suspension,60
+179750,Puramol Forte 250mg Oral Suspension,Medfence Labs,Branded,Paracetamol (250mg),39.0,suspension,60
+211618,Somoa 250 Oral Suspension,Somkee India Private Limited,Branded,Paracetamol (250mg),39.0,suspension,60
+181381,Parariv DS 250mg Oral Suspension,East African (India) Overseas,Branded,Paracetamol (250mg),39.58,suspension,60
+57856,Cetofeb Oral Suspension,Worth Medicines Pvt Ltd,Branded,Paracetamol (250mg),39.6,suspension,60
+86281,Fever-X 250mg Oral Suspension Mix Fruit,Morepen Laboratories Ltd,Branded,Paracetamol (250mg),39.6,suspension,60
+84149,FEPANIL 250 MG SUSPENSION,Veritaz Healthcare Ltd,Branded,Paracetamol (250mg),39.61,suspension,60
+119597,Kidimark 250mg Oral Suspension,Oriel Healthcare Pvt Ltd,Branded,Paracetamol (250mg),39.64,suspension,60
+211906,Sysgesic 250mg Oral Suspension,Torance Healthcare Pvt Ltd,Branded,Paracetamol (250mg),39.64,suspension,60
+253140,Zytamol 250 Oral Suspension,Rebanta Health Care (P) Limited,Branded,Paracetamol (250mg),39.65,suspension,60
+55478,Crosac-DS 250mg Oral Drops,SAC Pharmaceuticals,Branded,Paracetamol (250mg),39.9,drops,60
+8522,Asmol 250mg Oral Suspension,Aster Pharma,Branded,Paracetamol (250mg),40.0,suspension,60
+113980,Joymol DS Oral Suspension Mango,Smart Laboratories Pvt Ltd,Branded,Paracetamol (250mg),40.0,suspension,60
+115076,Jeevpar 250mg Syrup,Jeevecam Lifescience Pvt Ltd,Branded,Paracetamol (250mg),40.0,syrup,60
+132691,Lexp 250mg Oral Suspension,Lexaro Healthcare,Branded,Paracetamol (250mg),40.0,suspension,60
+176207,Paradol Syrup,Helios Pharmaceuticals,Branded,Paracetamol (250mg),40.0,syrup,60
+205355,S Mol 250mg Syrup,Sara Remedies,Branded,Paracetamol (250mg),40.0,syrup,60
+211043,Silpara 250mg Oral Suspension,Asiltus Biopharma,Branded,Paracetamol (250mg),40.0,suspension,60
+253698,Zoxepar 250mg Oral Suspension,Zoxvina Biotech Private Limited,Branded,Paracetamol (250mg),40.0,suspension,60
+165994,Opimol 250 Oral Suspension,Overseas Pharma Pvt Ltd,Branded,Paracetamol (250mg),40.3,suspension,60
+196140,Ricmol Forte 250mg Syrup,Dycott Healthcare,Branded,Paracetamol (250mg),40.3,syrup,60
+139541,Medpol 250mg Oral Suspension,Medset Pharma,Branded,Paracetamol (250mg),40.32,suspension,60
+154719,Neximol DS 250mg Oral Suspension,Novo Medi Sciences Pvt Ltd,Branded,Paracetamol (250mg),40.32,suspension,60
+177662,Paratee 250 Oral Suspension,Terra Pharma Private Limited,Branded,Paracetamol (250mg),40.32,suspension,60
+212169,Sinpar 250 Oral Suspension,Insinius Pharmaceuticals,Branded,Paracetamol (250mg),40.32,suspension,60
+98917,G Mol DS 250mg Oral Suspension,Vrinda Life,Branded,Paracetamol (250mg),40.5,suspension,60
+9147,Ademol 250 Oral Suspension,Adept Biocare,Branded,Paracetamol (250mg),41.0,suspension,60
+82333,Evimol 250mg Oral Suspension,Ess Pee Enterprises,Branded,Paracetamol (250mg),41.0,suspension,60
+91235,Figonil 250mg Oral Suspension,Alrosa Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),41.0,suspension,60
+102397,Gigamol Oral Suspension,Trubeca Lifesciences,Branded,Paracetamol (250mg),41.0,suspension,60
+228770,Taphemol Plus 250mg Oral Suspension,Axico Healthcare,Branded,Paracetamol (250mg),41.0,suspension,60
+29305,Bromol 250mg Syrup,Brook Parker,Branded,Paracetamol (250mg),42.0,syrup,60
+92913,Feudamol Suspension,Staunch Health Care Pvt Ltd,Branded,Paracetamol (250mg),42.0,suspension,60
+109430,Ira 250mg Oral Suspension,Iatric Pharmaceuticals,Branded,Paracetamol (250mg),42.0,suspension,60
+115117,Jespar 250mg Oral Suspension,Jes Pharmacia Private Limited,Branded,Paracetamol (250mg),42.0,suspension,60
+212000,Silomol 250mg Oral Suspension,Asgard Labs Private Limited,Branded,Paracetamol (250mg),42.0,suspension,60
+32694,Blemol 250mg Oral Suspension,Blesslife healthcare,Branded,Paracetamol (250mg),43.0,suspension,60
+89363,Fexeno 250mg Syrup,Narankaa Pharma,Branded,Paracetamol (250mg),43.0,syrup,60
+174696,Paragreat 250mg Suspension,Mankind Pharma Ltd,Branded,Paracetamol (250mg),44.35,suspension,60
+205057,Sedmol 250mg Oral Suspension,Sedulus Remedies,Branded,Paracetamol (250mg),44.35,suspension,60
+33725,Bropara 250mg Syrup,Penardo Biotech,Branded,Paracetamol (250mg),44.75,syrup,60
+56145,Castom 250mg Oral Suspension,Aeston Life Sciences,Branded,Paracetamol (250mg),45.0,suspension,60
+69553,Diplol 250mg Oral Suspension,Syndicate Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),45.0,suspension,60
+90527,Felok Suspension,Aurz Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),45.0,suspension,60
+102226,Gapmol 250mg Oral Suspension,Blair Remedies Pvt Ltd,Branded,Paracetamol (250mg),45.0,suspension,60
+120299,Kiomol 250mg Oral Suspension,Kioxy Healthcare,Branded,Paracetamol (250mg),45.0,suspension,60
+146238,Mexmol 250 Suspension,Comex Pharma,Branded,Paracetamol (250mg),45.0,suspension,60
+235950,Vermol Oral Suspension,Aver Pharmaceuticals Pvt Ltd,Branded,Paracetamol (250mg),45.0,suspension,60
+80162,Ethimol Forte Oral Suspension,Ethics Health Care Pvt Ltd,Branded,Paracetamol (250mg),45.75,suspension,60
+103516,Gracimol 250mg Oral Suspension,Graciera Pharmacetuicals LLP,Branded,Paracetamol (250mg),48.0,suspension,60
+212416,Sympar 250mg Syrup,SBM Pharmaceuticals,Branded,Paracetamol (250mg),48.0,syrup,60
+252223,Zadumol 250mg Oral Suspension,Panm Labs India,Branded,Paracetamol (250mg),49.0,suspension,60
+181844,Paramet 250mg Syrup,Metrix Healthcare Pvt Ltd,Branded,Paracetamol (250mg),52.0,syrup,60
+172726,Ongesic 250mg Oral Suspension,Astakind Biotech Private Limited,Branded,Paracetamol (250mg),56.0,suspension,60
+25059,Asetamole 250mg Oral Suspension,Astam Health Care Pvt Ltd,Branded,Paracetamol (250mg),58.0,suspension,60
+239639,Vinofen 250 Oral Suspension,Anvicure Drugs,Branded,Paracetamol (250mg),60.0,suspension,60
+226669,T 37 DS Suspension,Fulfil Healthcare Pvt Ltd,Branded,Paracetamol (250mg),32.0,suspension,30
+80078,Eumol 250mg Suspension,Biotabs Life Sciences Pvt Ltd,Branded,Paracetamol (250mg),35.0,suspension,30
+183181,Q-Mol Oral Suspension,Mediquest Inc.,Branded,Paracetamol (250mg),35.0,suspension,30
+131937,Loremdolo 250mg Syrup,Loremchem Pharmaceutical,Branded,Paracetamol (250mg),78.0,syrup,60
