@@ -3,10 +3,10 @@
    ========================================================= */
 
 :root {
-  --primary-color: #80b9dd;
+  --primary-color: #263944;
   --primary-dark: #001a3d;
-  --secondary-color: #1282a2;
-  --accent-color: #ffc107;
+  --secondary-color: #c1dfe7;
+  --accent-color: #8dd1c6;
   --text-color: #333;
   --muted-color: #666;
   --container-width: 1200px;
@@ -21,8 +21,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
+  scroll-padding-top: 100px;
 }
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px;
+  }
+}
+
 
 body {
   font-family: "Poppins", sans-serif;
@@ -81,7 +88,7 @@ a {
 
 .logo img {
   width: auto;
-  height: 40px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -99,7 +106,7 @@ a {
 .nav-link {
   display: block;
   padding: 10px 14px;
-  color: #fff;
+  color: #f0f3f2;
   text-decoration: none;
   font-weight: 500;
   border-radius: 8px;
@@ -107,7 +114,7 @@ a {
 }
 
 .nav-link:hover {
-  color: #4fc3f7;
+  color: #91dddd;
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -126,11 +133,11 @@ a {
   min-height: calc(100vh - 75px);
   margin-top: 75px;
   overflow: hidden;
-  color: #fff;
+  color: #05358d;
   background: linear-gradient(
     135deg,
     rgba(218, 221, 226, 0.95),
-    rgba(90, 179, 202, 0.78)
+    rgba(152, 233, 239, 0.78)
   );
 }
 
@@ -177,7 +184,7 @@ a {
 .tagline {
   max-width: 800px;
   margin: 20px 0 30px;
-  color: #fff;
+  color: #05358d;
   font-size: 1.05rem;
 }
 
@@ -224,8 +231,8 @@ a {
 
 .btn-secondary {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #1c058d;
+  border: 2px solid #1c058d;
 }
 
 .btn:hover {
@@ -296,6 +303,7 @@ a {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+
 }
 
 #medicine-search-form button {
@@ -330,15 +338,34 @@ a {
 }
 
 .medicine-type {
-  font-weight: bold;
+  font-size: 12px;
 }
 
 .medicine-type.generic {
+  border: 0.25px solid green ;
+  background: linear-gradient(
+    135deg,
+    rgba(218, 221, 226, 0.95),
+    rgba(149, 243, 193, 0.78)
+  );
+  width: fit-content;
+  padding: 2px 6px;
   color: green;
+  border-radius: 4px;
+  
 }
 
 .medicine-type.branded {
+  border: 0.25px solid blue;
+  background: linear-gradient(
+    135deg,
+    rgba(218, 221, 226, 0.95),
+    rgba(149, 183, 243, 0.78)
+  );
+  width: fit-content;
+  padding: 2px 6px;
   color: blue;
+  border-radius: 4px;
 }
 
 .medicine-name {
@@ -349,24 +376,44 @@ a {
 
 .medicine-manufacturer {
   margin-top: 10px;
+  font-size: 14px;
+}
+.manufacturer {
+  font-size: 13px;
 }
 
 .medicine-active-ing {
   margin-top: 10px;
+  font-size: 15px;
 }
+.active-ingredient {
+  font-size: 13px;
+}
+.medicine.branded{
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  width: fit-content;
+  padding: 5px 20px;
+  background: 
+    rgba(149, 183, 243, 0.78);
+
 
 .medicine-cost {
-  margin-top: 15px;
-  font-weight: bold;
+  
+  font-size: 16px;
+
 }
 
-.medicine-tablets {
-  margin-top: 10px;
-}
+
 
 .medicine-cost-per-tablet {
-  margin-top: 5px;
+
   font-weight: bold;
+  font-size: 20px;
+  color: #154bb0;
+}
 }
 
 
@@ -402,6 +449,7 @@ a {
 #favorites {
   min-height: 500px;
   padding: 50px 0;
+  margin-top: 75px;
 }
 
 #favorites h1 {
