@@ -5,7 +5,6 @@ import re
 
 app = Flask(__name__)
 
-
 # =========================================================
 # FILE PATHS
 # =========================================================
@@ -13,7 +12,6 @@ app = Flask(__name__)
 MEDICINES = "database/medicines.csv"
 FAVOURITES = "database/favourites.csv"
 RESULTS = "database/results.csv"
-
 
 # =========================================================
 # CALCULATE COMPARABLE COST
@@ -23,23 +21,17 @@ def calculate_cost(cost, medicine_type, quantity):
 
     try:
         cost = float(cost)
-
         match = re.search(
             r"\d+(?:\.\d+)?",
             str(quantity)
         )
-
         if not match:
             return None
-
         quantity_value = float(match.group())
-
     except (ValueError, AttributeError):
         return None
-
     if quantity_value <= 0:
         return None
-
     medicine_type = str(
         medicine_type
     ).strip().lower()
@@ -57,12 +49,10 @@ def calculate_cost(cost, medicine_type, quantity):
         "patch",
         "suppository"
     ]:
-
         return (
             cost / quantity_value,
             medicine_type
         )
-
 
     # -----------------------------------------------------
     # WEIGHT-BASED
@@ -75,12 +65,10 @@ def calculate_cost(cost, medicine_type, quantity):
         "ointment",
         "powder"
     ]:
-
         return (
             (cost / quantity_value) * 100,
             "100 g"
         )
-
 
     # -----------------------------------------------------
     # VOLUME-BASED
@@ -94,12 +82,10 @@ def calculate_cost(cost, medicine_type, quantity):
         "suspension",
         "syrup"
     ]:
-
         return (
             (cost / quantity_value) * 100,
             "100 ml"
         )
-
 
     # -----------------------------------------------------
     # UNIT-BASED
@@ -111,22 +97,17 @@ def calculate_cost(cost, medicine_type, quantity):
         "tube",
         "vial"
     ]:
-
         return (
             cost / quantity_value,
             medicine_type
         )
-
-
     return None
-
 
 # =========================================================
 # MEDICINE CARD
 # =========================================================
 
-def card(row, favourite=False):
-
+def card(row, favourite=False, index=0):
     (
         medicine_id,
         name,
@@ -137,87 +118,47 @@ def card(row, favourite=False):
         medicine_type,
         quantity
     ) = row
-
-
-    manufacturer_type = str(
-        manufacturer_type
-    ).strip().lower()
-
-    medicine_type = str(
-        medicine_type
-    ).strip().lower()
-
+    manufacturer_type = str(manufacturer_type).strip().lower()
+    medicine_type = str(medicine_type).strip().lower()
 
     # -----------------------------------------------------
     # FAVORITE
     # -----------------------------------------------------
-
     heart = "♥" if favourite else "♡"
-
-    favourite_class = (
-        "active"
-        if favourite
-        else ""
-    )
-
+    favourite_class = "active" if favourite else ""
 
     # -----------------------------------------------------
     # CALCULATED COST
     # -----------------------------------------------------
-
-    calculated = calculate_cost(
-        cost,
-        medicine_type,
-        quantity
-    )
-
+    calculated = calculate_cost(cost, medicine_type, quantity)
 
     if calculated:
-
         unit_cost, unit = calculated
-
         cost_html = f"""
         <div class="medicine {manufacturer_type}">
-
           <div class="medicine-cost-per-tablet">
-            ₹{unit_cost:.2f} /
-            <span class="medicine">{unit}</span>
+            ₹{unit_cost:.2f} / <span class="medicine">{unit}</span>
           </div>
-
           <div class="medicine-tablets">
-            pack of {quantity}:
-            <span class="medicine-cost">
-              ₹{float(cost):.2f}
-            </span>
+            pack of {quantity}: <span class="medicine-cost">₹{float(cost):.2f}</span>
           </div>
-
         </div>
         """
-
     else:
-
         cost_html = f"""
         <div class="medicine {manufacturer_type}">
-
-          <div class="medicine-cost">
-            ₹{float(cost):.2f}
-          </div>
-
+          <div class="medicine-cost">₹{float(cost):.2f}</div>
         </div>
         """
-
 
     # =====================================================
     # CARD HTML
     # =====================================================
-
     return f"""
-    <div class="medicine-card">
-
+    <div class="medicine-card" style="--i: {index};">
         <div class="medicine-type {manufacturer_type}">
           {manufacturer_type.capitalize()}
         </div>
-
         <button
           class="favorite-button {favourite_class}"
           data-id="{medicine_id}"
@@ -226,76 +167,51 @@ def card(row, favourite=False):
               if favourite
               else 'Add to favorites'
           }">
-
-          <span class="favorite-heart">
-            {heart}
-          </span>
-
+          <span class="favorite-heart">{heart}</span>
         </button>
-
-        <div class="medicine-name">
-          {name}
-        </div>
-
-        <div class="medicine-type">
-          {medicine_type}
-        </div>
-
+        <div class="medicine-name">{name}</div>
+        <div class="medicine-type">{medicine_type}</div>
         <hr>
-
         <div class="medicine-manufacturer">
-          Manufacturer:
-          <br>
-          <div class="manufacturer">
-            {manufacturer}
-          </div>
+          Manufacturer:<br>
+          <div class="manufacturer">{manufacturer}</div>
         </div>
-
         <div class="medicine-active-ing">
-          Active Ingredient:
-          <br>
-          <div class="active-ingredient">
-            {ingredient}
-          </div>
+          Active Ingredient:<br>
+          <div class="active-ingredient">{ingredient}</div>
         </div>
-
         {cost_html}
-
     </div>
     """
-
 
 # =========================================================
 # SAVE SEARCH RESULTS
 # =========================================================
 
+RESULTS_FIELDS = [
+    "id",
+    "name",
+    "manufacturer",
+    "manufacturer_type",
+    "active_ingredient",
+    "cost",
+    "medicine_type",
+    "quantity"
+]
+
 def save_results(results):
-
-    fields = [
-        "id",
-        "name",
-        "manufacturer",
-        "manufacturer_type",
-        "active_ingredient",
-        "cost",
-        "medicine_type",
-        "quantity"
-    ]
-
-
     with open(
         RESULTS,
         "w",
         newline="",
         encoding="utf-8"
     ) as file:
-
         writer = csv.writer(file)
-
-        writer.writerow(fields)
-
+        writer.writerow(RESULTS_FIELDS)
         writer.writerows(results)
 
+def reset_results():
+    save_results([])
 
 # =========================================================
 # HOME
@@ -303,11 +219,9 @@ def save_results(results):
 
 @app.route("/")
 def home():
-
     return render_template(
         "index.html"
     )
-
 
 # =========================================================
 # FAVORITES PAGE
@@ -315,11 +229,9 @@ def home():
 
 @app.route("/favorites")
 def favorites():
-
     return render_template(
         "favorites.html"
     )
-
 
 # =========================================================
 # SEARCH MEDICINES
@@ -330,9 +242,7 @@ def favorites():
     methods=["POST"]
 )
 def search():
-
-    data = request.get_json()
-
+    data = request.get_json(silent=True) or {}
     name = data.get(
         "name",
         ""
@@ -340,11 +250,9 @@ def search():
 
 
     if not name:
-
         return """
         <p>Please enter a medicine name.</p>
         """
-
 
     # -----------------------------------------------------
     # Find active ingredient
@@ -352,26 +260,17 @@ def search():
 
     ingredient = duckdb.sql("""
         SELECT active_ingredient
-
         FROM read_csv_auto(?)
-
         WHERE LOWER(name)
         LIKE LOWER(?)
-
         LIMIT 1
-
     """, params=[
-
         MEDICINES,
         f"%{name}%"
-
     ]).fetchone()
 
-
     if not ingredient:
-
         save_results([])
-
         return """
         <p>Medicine not found.</p>
         """
@@ -381,29 +280,13 @@ def search():
     # Find all medicines with same ingredient
     # -----------------------------------------------------
 
-    results = duckdb.sql("""
+    query_results = duckdb.sql("""
         SELECT
-
-            id,
-            name,
-            manufacturer,
-            manufacturer_type,
-            active_ingredient,
-            cost,
-            medicine_type,
-            quantity
-
+            id, name, manufacturer, manufacturer_type, 
+            active_ingredient, cost, medicine_type, quantity
         FROM read_csv_auto(?)
-
-        WHERE LOWER(active_ingredient)
-        = LOWER(?)
-
-    """, params=[
-
-        MEDICINES,
-        ingredient[0]
-
-    ]).fetchall()
+        WHERE LOWER(active_ingredient) = LOWER(?)
+    """, params=[MEDICINES, ingredient[0]]).fetchall()
 
 
     # -----------------------------------------------------
@@ -416,18 +299,14 @@ def search():
             row[6],  # medicine_type
             row[7]   # quantity
         )
-
         if calculated:
             return calculated[0]
-
         return float("inf")
 
-
     results = sorted(
-        results,
+        query_results,
         key=sort_cost
     )
-
 
     # -----------------------------------------------------
     # Save results.csv
@@ -435,29 +314,23 @@ def search():
 
     save_results(results)
 
-
     # -----------------------------------------------------
     # Get favourite IDs
     # -----------------------------------------------------
 
     favourite_ids = set()
 
-
     try:
-
         with open(
             FAVOURITES,
             newline="",
             encoding="utf-8"
         ) as file:
-
             favourite_ids = {
                 row["id"]
                 for row in csv.DictReader(file)
             }
-
     except FileNotFoundError:
-
         pass
 
 
@@ -465,15 +338,11 @@ def search():
     # Generate cards
     # -----------------------------------------------------
 
-    return "".join(
-
-        card(
-            row,
-            str(row[0]) in favourite_ids
-        )
-
-        for row in results
-    )
+    cards_html = ""
+    for index, row in enumerate(results):
+        is_favourite = str(row[0]) in favourite_ids
+        cards_html += card(row, favourite=is_favourite, index=index)
+    return cards_html
 
 
 # =========================================================
@@ -484,10 +353,8 @@ def search():
 def get_favorites():
 
     try:
-
         results = duckdb.sql("""
             SELECT
-
                 id,
                 name,
                 manufacturer,
@@ -496,39 +363,103 @@ def get_favorites():
                 cost,
                 medicine_type,
                 quantity
-
             FROM read_csv_auto(?)
-
         """, params=[
-
             FAVOURITES
-
         ]).fetchall()
 
-
-    except Exception:
-
+    except (FileNotFoundError, IOError):
         results = []
 
-
     if not results:
-
         return """
         <p class="no-favorites">
             No favorite medicines yet.
         </p>
         """
 
-
     return "".join(
-
         card(
             row,
             True
         )
-
         for row in results
     )
+
+
+# =========================================================
+# ANALYTICS (built from the last search's results.csv)
+# =========================================================
+
+@app.route("/api/analytics")
+def analytics():
+
+    empty = {
+        "manufacturers": {
+            "labels": [],
+            "counts": []
+        },
+        "types": {
+            "labels": [],
+            "counts": []
+        }
+    }
+
+
+    try:
+        manufacturer_rows = duckdb.sql("""
+            SELECT
+                manufacturer,
+                COUNT(*) AS total
+            FROM read_csv_auto(?)
+            GROUP BY manufacturer
+            ORDER BY total DESC
+            LIMIT 6
+        """, params=[
+            RESULTS
+        ]).fetchall()
+
+        type_rows = duckdb.sql("""
+            SELECT
+                manufacturer_type,
+                COUNT(*) AS total
+            FROM read_csv_auto(?)
+            GROUP BY manufacturer_type
+        """, params=[
+            RESULTS
+        ]).fetchall()
+
+    except (
+        FileNotFoundError,
+        IOError,
+        duckdb.Error
+    ):
+        return empty
+
+
+    if not manufacturer_rows and not type_rows:
+        return empty
+
+
+    return {
+        "manufacturers": {
+            "labels": [
+                row[0] for row in manufacturer_rows
+            ],
+            "counts": [
+                row[1] for row in manufacturer_rows
+            ]
+        },
+        "types": {
+            "labels": [
+                str(row[0]).strip().capitalize()
+                for row in type_rows
+            ],
+            "counts": [
+                row[1] for row in type_rows
+            ]
+        }
+    }
 
 
 # =========================================================
@@ -540,14 +471,15 @@ def get_favorites():
     methods=["POST"]
 )
 def update_favorite():
-
-    data = request.get_json()
-
-    medicine_id = str(
-        data["id"]
-    )
-
-    favourite = data["favorite"]
+    data = request.get_json(silent=True) or {}
+    raw_id = data.get("id")
+    favourite = data.get("favorite")
+    if raw_id is None or favourite is None:
+        return {
+            "success": False,
+            "error": "Missing 'id' or 'favorite' field."
+        }, 400
+    medicine_id = str(raw_id)
 
 
     # -----------------------------------------------------
@@ -555,19 +487,15 @@ def update_favorite():
     # -----------------------------------------------------
 
     try:
-
         with open(
             FAVOURITES,
             newline="",
             encoding="utf-8"
         ) as file:
-
             favourites = list(
                 csv.DictReader(file)
             )
-
     except FileNotFoundError:
-
         favourites = []
 
 
@@ -576,13 +504,9 @@ def update_favorite():
     # -----------------------------------------------------
 
     favourites = [
-
         row
-
         for row in favourites
-
         if row["id"] != medicine_id
-
     ]
 
 
@@ -592,9 +516,16 @@ def update_favorite():
 
     if favourite:
 
+        try:
+            medicine_id_int = int(medicine_id)
+        except ValueError:
+            return {
+                "success": False,
+                "error": "'id' must be a number."
+            }, 400
+
         medicine = duckdb.sql("""
             SELECT
-
                 id,
                 name,
                 manufacturer,
@@ -603,23 +534,15 @@ def update_favorite():
                 cost,
                 medicine_type,
                 quantity
-
             FROM read_csv_auto(?)
-
             WHERE id = ?
-
         """, params=[
-
             MEDICINES,
-            int(medicine_id)
-
+            medicine_id_int
         ]).fetchone()
 
-
         if medicine:
-
             fields = [
-
                 "id",
                 "name",
                 "manufacturer",
@@ -628,9 +551,7 @@ def update_favorite():
                 "cost",
                 "medicine_type",
                 "quantity"
-
             ]
-
 
             favourites.append(
                 dict(
@@ -647,7 +568,6 @@ def update_favorite():
     # -----------------------------------------------------
 
     fields = [
-
         "id",
         "name",
         "manufacturer",
@@ -656,29 +576,21 @@ def update_favorite():
         "cost",
         "medicine_type",
         "quantity"
-
     ]
-
-
     with open(
         FAVOURITES,
         "w",
         newline="",
         encoding="utf-8"
     ) as file:
-
         writer = csv.DictWriter(
             file,
             fieldnames=fields
         )
-
         writer.writeheader()
-
         writer.writerows(
             favourites
         )
-
-
     return {
         "success": True,
         "favorite": favourite
@@ -690,7 +602,7 @@ def update_favorite():
 # =========================================================
 
 if __name__ == "__main__":
-
+    reset_results()
     app.run(
         debug=True
     )

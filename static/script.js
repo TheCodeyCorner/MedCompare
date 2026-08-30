@@ -80,6 +80,7 @@ if (searchForm) {
 
 
                 setupFavoriteButtons();
+                updateAnalytics();
 
 
             } catch (error) {
@@ -345,8 +346,220 @@ async function loadFavorites() {
 
 
 // --------------------------------
+// Analytics Charts
+// (population driven by /api/analytics, which reads
+// the server's database/results.csv)
+// --------------------------------
+
+let manufacturerChartInstance = null;
+let typeChartInstance = null;
+
+
+function initCharts() {
+
+    const manufacturerCanvas =
+        document.getElementById(
+            "manufacturerChart"
+        );
+
+    const typeCanvas =
+        document.getElementById(
+            "typeChart"
+        );
+
+
+    // These canvases only exist on index.html, so bail
+    // out quietly on pages (e.g. favorites) that don't
+    // have them.
+    if (!manufacturerCanvas || !typeCanvas) {
+        return;
+    }
+
+
+    manufacturerChartInstance = new Chart(
+
+        manufacturerCanvas.getContext("2d"),
+
+        {
+            type: "bar",
+
+            data: {
+                labels: [],
+
+                datasets: [{
+                    label: "Products in Last Search",
+                    data: [],
+                    backgroundColor: "#2563eb"
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    title: {
+                        display: true,
+                        text:
+                            "Manufacturers in Last Search"
+                    }
+                },
+
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                }
+            }
+        }
+
+    );
+
+
+    typeChartInstance = new Chart(
+
+        typeCanvas.getContext("2d"),
+
+        {
+            type: "doughnut",
+
+            data: {
+                labels: [],
+
+                datasets: [{
+                    data: [],
+                    backgroundColor: [
+                        "#0284c7",
+                        "#f59e0b",
+                        "#16a34a",
+                        "#dc2626"
+                    ]
+                }]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+                    title: {
+                        display: true,
+                        text:
+                            "Branded vs. Generic Split"
+                    }
+                }
+            }
+        }
+
+    );
+
+}
+
+
+async function updateAnalytics() {
+
+    // No charts on this page (e.g. favorites.html) -
+    // nothing to update.
+    if (!manufacturerChartInstance || !typeChartInstance) {
+        return;
+    }
+
+
+    const analyticsSection =
+        document.getElementById(
+            "analyticsSection"
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/analytics"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to load analytics"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        // results.csv has no rows yet (fresh start, or a
+        // search that returned nothing) - keep the whole
+        // section hidden rather than showing empty charts.
+        const hasData =
+            data.manufacturers.counts.length > 0;
+
+
+        if (analyticsSection) {
+
+            analyticsSection.style.display =
+                hasData ? "block" : "none";
+
+        }
+
+
+        if (!hasData) {
+            return;
+        }
+
+
+        manufacturerChartInstance.data.labels =
+            data.manufacturers.labels;
+
+        manufacturerChartInstance.data.datasets[0].data =
+            data.manufacturers.counts;
+
+        manufacturerChartInstance.update();
+
+
+        typeChartInstance.data.labels =
+            data.types.labels;
+
+        typeChartInstance.data.datasets[0].data =
+            data.types.counts;
+
+        typeChartInstance.update();
+
+
+    } catch (error) {
+
+        console.error(
+            "Analytics error:",
+            error
+        );
+
+
+        // On a genuine fetch/parse error, don't leave a
+        // stale chart showing - hide the section.
+        if (analyticsSection) {
+
+            analyticsSection.style.display =
+                "none";
+
+        }
+
+    }
+
+}
+
+
+// --------------------------------
 // Initialize
 // --------------------------------
 
 setupFavoriteButtons();
 loadFavorites();
+initCharts();
+updateAnalytics();

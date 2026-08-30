@@ -3,19 +3,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedCompare</title>
-  
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 </head>
 <body>
 <!-- =====================================================
      NAVIGATION
-     Change the menu labels and links only.
      ===================================================== -->
   <nav class="navbar">
     <div class="container">
       <a href="#home" class="logo">
         <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo">
-        <span>MedCompare</span>
       </a>
 
       
@@ -70,7 +71,7 @@
           </p>
 
           <img
-            src="{{ url_for('static', filename='assets/logo.png') }}"
+            src="{{ url_for('static', filename='assets/logo_textless.png') }}"
             alt="Logo"
             class="mobile-logo-image"
           >
@@ -82,7 +83,7 @@
         </div>
 
         <div class="globe-container">
-          <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Main Logo">
+          <img src="{{ url_for('static', filename='assets/logo_textless.png') }}" alt="Main Logo">
         </div>
 
       </div>
@@ -96,7 +97,7 @@
 
 
   <!-- =====================================================
-  Working Section
+  WORKING SECTION
      ===================================================== -->
 
     <!-- Medicine Search Form -->
@@ -116,74 +117,13 @@
     </form>
     
     
-     <div class="medicine-card-grid" id="primary">
-
-        <div class="medicine-card">
-
-          <div class="medicine-type branded">
-              Branded
-          </div>
-
-          <button
-              class="favorite-button"
-              data-id="6"
-              aria-label="Add to favorites">
-
-              <span class="favorite-heart">
-                  ♡
-              </span>
-
-          </button>
-
-          <div class="medicine-name">
-              Pan-D
-          </div>
-
-          <div class="medicine-type">
-              tablet
-          </div>
-
-          <hr>
-
-          <div class="medicine-manufacturer">
-              Manufacturer:
-              <br>
-              <div class="manufacturer">
-                  HealthCare Pharma
-              </div>
-          </div>
-
-          <div class="medicine-active-ing">
-              Active Ingredient:
-              <br>
-              <div class="active-ingredient">
-                  Pantoprazole + Domperidone
-              </div>
-          </div>
-
-          <div class="medicine branded">
-
-              <div class="medicine-cost-per-tablet">
-                  ₹12.00 /
-                  <span class="medicine">
-                      tablet
-                  </span>
-              </div>
-
-              <div class="medicine-tablets">
-                  pack of 10:
-                  <span class="medicine-cost">
-                      ₹120.00
-                  </span>
-              </div>
-
-          </div>
+      <div class="medicine-card-grid" id="primary">
 
       </div>
       
     </div>
     
-    <div class="analytics-grid" style="width: 100%; max-width: 1000px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+    <div id="analyticsSection" class="analytics-grid" style="display: none; width: 100%; max-width: 1000px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
         
         <h2 style="text-align: center; margin-bottom: 24px; font-family: inherit; color: #1e293b;">Market Analytics & Insights</h2>
         
@@ -201,55 +141,10 @@
 
       </div>
 
-      <!-- Load Chart.js CDN -->
+      <!-- Load Chart.js CDN. Chart creation/updates now live in
+           script.js (updateAnalytics()), driven by /api/analytics,
+           which reads database/results.csv -->
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          // Top Manufacturers Bar Chart
-          const ctxBar = document.getElementById('manufacturerChart').getContext('2d');
-          new Chart(ctxBar, {
-            type: 'bar',
-            data: {
-              labels: ['Sun Pharma', 'Cipla', 'Intas', 'Torrent', 'Alkem', 'Abbott'],
-              datasets: [{
-                label: 'Total Products',
-                data: [3000, 2500, 2300, 2000, 1800, 1750],
-                backgroundColor: '#2563eb'
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                title: { display: true, text: 'Top Manufacturers by Product Count' }
-              }
-            }
-          });
-
-          // Branded vs Generic Donut Chart
-          const ctxPie = document.getElementById('typeChart').getContext('2d');
-          new Chart(ctxPie, {
-            type: 'doughnut',
-            data: {
-              labels: ['Branded', 'Generic'],
-              datasets: [{
-                data: [252800, 1200],
-                backgroundColor: ['#0284c7', '#f59e0b']
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                title: { display: true, text: 'Branded vs. Generic Split' }
-              }
-            }
-          });
-        });
-      </script>
-
-      </div>
-    </div>
 
     <script
         src="{{ url_for('static', filename='script.js') }}">
@@ -268,8 +163,7 @@
       <div class="footer-about">
         <h3>ABOUT</h3>
         <p>
-          Your website description goes here. Replace this with your own
-          organization, project, company, event, or application information.
+          Compare medicines, make informed choices, and save money with MedCompare.
         </p>
       </div>
 
@@ -278,8 +172,8 @@
 
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#primary">Compare</a></li>
+          <li><a href="#footer">About</a></li>
+          <li><a href="/#medicine-search-form">Compare</a></li>
           <li><a href="/favorites">Favorites</a></li>
         </ul>
       </div>
@@ -288,7 +182,7 @@
 
     <div class="footer-bottom">
       <p>
-        &copy; 2026 YOUR WEBSITE. All Rights Reserved.
+        &copy; 2026 MedCompare. All Rights Reserved.
       </p>
     </div>
 

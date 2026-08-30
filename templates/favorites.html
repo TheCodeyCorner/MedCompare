@@ -3,10 +3,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedCompare - Favorites</title>
-  
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 </head>
-
 <body>
 
 <!-- =====================================================
@@ -15,63 +17,46 @@
 
 <nav class="navbar">
   <div class="container">
-
     <a href="/" class="logo">
       <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo">
-      <span>MedCompare</span>
     </a>
-
     <ul class="nav-menu">
-
       <li class="nav-item">
         <a href="/" class="nav-link">Home</a>
       </li>
-
       <li class="nav-item dropdown">
         <a href="/#footer" class="nav-link">
           About
         </a>
       </li>
-
       <li class="nav-item dropdown">
         <a href="/#medicine-search-form" class="nav-link">
           Compare Now
         </a>
       </li>
-
       <li class="nav-item">
         <a href="/favorites" class="nav-link active">
           View Favorites
         </a>
       </li>
-
     </ul>
-
   </div>
 </nav>
-
+<main id="favorites-main">
 
 <!-- =====================================================
      FAVORITES SECTION
      ===================================================== -->
 
 <section id="favorites">
-
   <div class="container">
-
     <h1>Favorite Medicines</h1>
-
-
     <!-- Medicine cards will be loaded here -->
-
     <div class="medicine-card-grid" id="favorites-grid">
-
     </div>
-
   </div>
-
 </section>
-
+</main>
 
 <!-- =====================================================
      JAVASCRIPT
@@ -81,70 +66,36 @@
   src="{{ url_for('static', filename='script.js') }}">
 </script>
 
-
 <!-- =====================================================
      FOOTER
      ===================================================== -->
 
 <footer class="footer" id="footer">
-
   <div class="container">
-
     <div class="footer-content">
-
       <div class="footer-about">
-
         <h3>ABOUT</h3>
-
         <p>
-          Your website description goes here. Replace this with your own
-          organization, project, company, event, or application information.
+          Compare medicines, make informed choices, and save money with MedCompare.
         </p>
-
       </div>
-
-
       <div class="footer-links">
-
         <h3>QUICK LINKS</h3>
-
         <ul>
-
-          <li>
-            <a href="/">Home</a>
-          </li>
-
-          <li>
-            <a href="/#about">About</a>
-          </li>
-
-          <li>
-            <a href="/#primary">Compare</a>
-          </li>
-
-          <li>
-            <a href="/favorites">Favorites</a>
-          </li>
-
+          <li><a href="/#home">Home</a></li>
+          <li><a href="/#footer">About</a></li>
+          <li><a href="/#medicine-search-form">Compare</a></li>
+          <li><a href="/favorites">Favorites</a></li>
         </ul>
-
       </div>
-
     </div>
-
-
     <div class="footer-bottom">
-
       <p>
-        &copy; 2026 YOUR WEBSITE. All Rights Reserved.
+        &copy; 2026 MedCompare. All Rights Reserved.
       </p>
-
     </div>
-
   </div>
-
 </footer>
-
 
 <!-- Back to top -->
 
@@ -152,40 +103,23 @@
   href="#favorites"
   class="back-to-top"
   aria-label="Back to top">
-
   <i class="fas fa-arrow-up"></i>
-
 </a>
 
-
 <script>
-
   document.addEventListener('DOMContentLoaded', function () {
-
     const backToTop =
       document.querySelector('.back-to-top');
-
-
     if (backToTop) {
-
       window.addEventListener('scroll', () => {
-
         if (window.pageYOffset > 300) {
-
           backToTop.classList.add('visible');
-
         } else {
-
           backToTop.classList.remove('visible');
-
         }
-
       });
-
     }
-
   });
-
 </script>
 </body>
 </html>
