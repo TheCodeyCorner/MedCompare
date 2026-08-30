@@ -383,7 +383,72 @@
 
     </div>
     
-    <div class="analytics-grid">
+    <div class="analytics-grid" style="width: 100%; max-width: 1000px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        
+        <h2 style="text-align: center; margin-bottom: 24px; font-family: inherit; color: #1e293b;">Market Analytics & Insights</h2>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+          <!-- Chart 1: Products per Manufacturer -->
+          <div style="flex: 1; min-width: 300px; height: 350px;">
+            <canvas id="manufacturerChart"></canvas>
+          </div>
+          
+          <!-- Chart 2: Branded vs Generic Split -->
+          <div style="flex: 1; min-width: 300px; height: 350px;">
+            <canvas id="typeChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load Chart.js CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Top Manufacturers Bar Chart
+          const ctxBar = document.getElementById('manufacturerChart').getContext('2d');
+          new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+              labels: ['Sun Pharma', 'Cipla', 'Intas', 'Torrent', 'Alkem', 'Abbott'],
+              datasets: [{
+                label: 'Total Products',
+                data: [3000, 2500, 2300, 2000, 1800, 1750],
+                backgroundColor: '#2563eb'
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                title: { display: true, text: 'Top Manufacturers by Product Count' }
+              }
+            }
+          });
+
+          // Branded vs Generic Donut Chart
+          const ctxPie = document.getElementById('typeChart').getContext('2d');
+          new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+              labels: ['Branded', 'Generic'],
+              datasets: [{
+                data: [252800, 1200],
+                backgroundColor: ['#0284c7', '#f59e0b']
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                title: { display: true, text: 'Branded vs. Generic Split' }
+              }
+            }
+          });
+        });
+      </script>
+
+      </div>
     </div>
 
     <script
