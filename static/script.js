@@ -105,6 +105,84 @@ if (searchForm) {
 
 }
 
+// --- LENS SCANNER MODULE ---
+let lensStream = null;
+
+const openLensBtn = document.getElementById('openLensBtn');
+const closeLensBtn = document.getElementById('closeLensBtn');
+const captureLensBtn = document.getElementById('captureLensBtn');
+const lensModal = document.getElementById('lensModal');
+const lensVideo = document.getElementById('lensVideo');
+const lensCanvas = document.getElementById('lensCanvas');
+
+if (openLensBtn) {
+    // 1. Open Camera Stream
+    openLensBtn.addEventListener('click', async () => {
+        try {
+            lensStream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: 'environment' }
+            });
+            lensVideo.srcObject = lensStream;
+            lensModal.style.display = 'flex';
+        } catch (err) {
+            alert('Unable to access camera. Please allow camera permissions.');
+            console.error(err);
+        }
+    });
+
+    // 2. Close Camera Stream
+    function closeLens() {
+        if (lensStream) {
+            lensStream.getTracks().forEach(track => track.stop());
+            lensStream = null;
+        }
+        lensModal.style.display = 'none';
+    }
+
+    closeLensBtn.addEventListener('click', closeLens);
+
+    // 3. Capture Frame & Recognize Text
+    captureLensBtn.addEventListener('click', async () => {
+        if (!lensVideo.videoWidth) return;
+
+        captureLensBtn.innerText = 'Scanning...';
+        captureLensBtn.disabled = true;
+
+        lensCanvas.width = lensVideo.videoWidth;
+        lensCanvas.height = lensVideo.videoHeight;
+        const ctx = lensCanvas.getContext('2d');
+        ctx.drawImage(lensVideo, 0, 0, lensCanvas.width, lensCanvas.height);
+
+        try {
+            const imageData = lensCanvas.toDataURL('image/jpeg');
+            const result = await Tesseract.recognize(imageData, 'eng');
+            const cleanedText = result.data.text.replace(/[^a-zA-Z0-9\s]/g, '').trim();
+
+            if (cleanedText) {
+                // Inserts scanned text into search input field
+                if (searchInput) {
+                    searchInput.value = cleanedText;
+                }
+                
+                closeLens();
+
+                // Triggers existing form submit logic
+                if (searchForm) {
+                    searchForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                }
+            } else {
+                alert('No text detected. Please hold steady and try again.');
+            }
+        } catch (err) {
+            console.error('OCR Error:', err);
+            alert('Error scanning text.');
+        } finally {
+            captureLensBtn.innerText = 'Scan Text';
+            captureLensBtn.disabled = false;
+        }
+    });
+}
+
 
 // --------------------------------
 // Setup Favourite Buttons
